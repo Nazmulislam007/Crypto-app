@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import moment from "moment";
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import Loader from "./Loader";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -16,7 +17,7 @@ const News = ({ simplified }) => {
 
   const { data } = useGetCryptosQuery(100);
 
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return <Loader />;
   const demoImage =
     "http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg";
 

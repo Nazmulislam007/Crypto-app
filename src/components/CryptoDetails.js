@@ -19,6 +19,7 @@ import {
 } from "@ant-design/icons";
 import HTMLReactParser from "html-react-parser";
 import LineChart from "./LineChart";
+import Loader from "./Loader";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -35,7 +36,7 @@ const CryptoDetails = () => {
   const cryptoDetails = data?.data?.coin;
   // console.log(cryptoDetails);
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loader />;
 
   const stats = [
     {
